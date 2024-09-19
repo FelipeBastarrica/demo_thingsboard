@@ -1,0 +1,28 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "42bfcd50-55c1-11ef-9229-f3aa570680fb"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "b25b2300-76da-11ef-95bb-f3c5773bc8e3"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "049df1b0-76db-11ef-95bb-f3c5773bc8e3"
+    },
+    "label" : null,
+    "name" : "location",
+    "type" : "default"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
