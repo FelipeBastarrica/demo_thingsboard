@@ -158,14 +158,15 @@
       "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 342,
         "layoutY" : 213
       },
       "configuration" : {
+        "dataToFetch" : "ATTRIBUTES",
         "dataMapping" : {
           "APPID" : "APPID"
         },
-        "dataToFetch" : "ATTRIBUTES",
         "fetchTo" : "METADATA"
       },
       "configurationVersion" : 1,
