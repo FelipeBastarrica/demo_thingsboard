@@ -130,15 +130,18 @@
       "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 48,
         "layoutY" : 215
       },
       "configuration" : {
         "msgCount" : 0,
         "periodInSeconds" : 15,
-        "originatorId" : "423b52c0-3f6d-11e9-a10f-53a2db67eb94",
-        "originatorType" : "ASSET",
-        "jsScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };"
+        "scriptLang" : "JS",
+        "jsScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };",
+        "tbelScript" : null,
+        "originatorId" : "049df1b0-76db-11ef-95bb-f3c5773bc8e3",
+        "originatorType" : "ASSET"
       },
       "configurationVersion" : 2,
       "createdTime" : 0,
