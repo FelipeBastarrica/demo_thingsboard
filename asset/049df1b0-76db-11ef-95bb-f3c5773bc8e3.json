@@ -6,7 +6,7 @@
     },
     "assetProfileId" : {
       "entityType" : "ASSET_PROFILE",
-      "id" : "42bfcd50-55c1-11ef-9229-f3aa570680fb"
+      "id" : "ea04dee0-76e9-11ef-95bb-f3c5773bc8e3"
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
@@ -18,11 +18,35 @@
       "id" : "049df1b0-76db-11ef-95bb-f3c5773bc8e3"
     },
     "label" : null,
-    "name" : "location",
-    "type" : "default"
+    "name" : "building A",
+    "type" : "building"
   },
   "relations" : [ ],
   "attributes" : {
-    "SERVER_SCOPE" : [ ]
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : 56.159624,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1726786988733,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : 34.910609,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1726787008609,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "units",
+      "lastUpdateTs" : 1726787032126,
+      "longValue" : null,
+      "strValue" : "metrics"
+    } ]
   }
 }
