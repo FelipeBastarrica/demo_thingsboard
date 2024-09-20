@@ -15,9 +15,170 @@
     "type" : "CORE"
   },
   "metaData" : {
-    "connections" : null,
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
     "firstNodeIndex" : null,
-    "nodes" : [ ],
+    "nodes" : [ {
+      "additionalInfo" : {
+        "layoutX" : 641,
+        "layoutY" : 212
+      },
+      "configuration" : {
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "latitude", "longitude", "units" ],
+        "latestTsKeyNames" : [ ],
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1f89a70-76e3-11ef-95bb-f3c5773bc8e3"
+      },
+      "name" : "Latitude/Longitude",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 939,
+        "layoutY" : 215
+      },
+      "configuration" : {
+        "restEndpointUrlPattern" : "http://api.openweathermap.org/data/2.5/weather?lat=${ss_latitude}&lon=${ss_longitude}&units=${ss_units}&APPID=${APPID}",
+        "requestMethod" : "GET",
+        "headers" : { },
+        "useSimpleClientHttpFactory" : false
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1f8e890-76e3-11ef-95bb-f3c5773bc8e3"
+      },
+      "name" : "Get Weather Data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1255,
+        "layoutY" : 215
+      },
+      "configuration" : {
+        "jsScript" : "var newMsg = {\n    \"outsideTemp\": msg.main.temp,\n    \"outsideMaxTemp\": msg.main.temp_max,\n    \"outsideMinTemp\": msg.main.temp_min,\n    \"outsideHumidity\": msg.main.humidity,\n};\n\n\nreturn {msg: newMsg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1f90fa0-76e3-11ef-95bb-f3c5773bc8e3"
+      },
+      "name" : "Fetch Data",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 1258,
+        "layoutY" : 331
+      },
+      "configuration" : {
+        "defaultTTL" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1f90fa1-76e3-11ef-95bb-f3c5773bc8e3"
+      },
+      "name" : "Save Timeseries",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 48,
+        "layoutY" : 215
+      },
+      "configuration" : {
+        "msgCount" : 0,
+        "periodInSeconds" : 15,
+        "originatorId" : "423b52c0-3f6d-11e9-a10f-53a2db67eb94",
+        "originatorType" : "ASSET",
+        "jsScript" : "return { msg: {}, metadata: {}, msgType: \"POST_TELEMETRY_REQUEST\" };"
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1f936b0-76e3-11ef-95bb-f3c5773bc8e3"
+      },
+      "name" : "Generate requests",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode"
+    }, {
+      "additionalInfo" : {
+        "layoutX" : 342,
+        "layoutY" : 213
+      },
+      "configuration" : {
+        "dataMapping" : {
+          "APPID" : "APPID"
+        },
+        "dataToFetch" : "ATTRIBUTES",
+        "fetchTo" : "METADATA"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugMode" : false,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1f95dc0-76e3-11ef-95bb-f3c5773bc8e3"
+      },
+      "name" : "Get customer API key",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetCustomerAttributeNode"
+    } ],
     "ruleChainConnections" : null
   },
   "attributes" : {
