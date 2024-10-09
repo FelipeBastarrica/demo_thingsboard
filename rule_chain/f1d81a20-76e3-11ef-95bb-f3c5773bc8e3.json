@@ -64,6 +64,7 @@
       "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 939,
         "layoutY" : 215
       },
@@ -76,7 +77,7 @@
       },
       "configurationVersion" : 3,
       "createdTime" : 0,
-      "debugMode" : false,
+      "debugMode" : true,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
