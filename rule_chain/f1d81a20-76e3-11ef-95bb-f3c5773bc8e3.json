@@ -71,9 +71,10 @@
         "restEndpointUrlPattern" : "http://api.openweathermap.org/data/2.5/weather?lat=${ss_latitude}&lon=${ss_longitude}&units=${ss_units}&APPID=${APPID}",
         "requestMethod" : "GET",
         "headers" : { },
-        "useSimpleClientHttpFactory" : false
+        "useSimpleClientHttpFactory" : false,
+        "maxInMemoryBufferSizeInKb" : 256
       },
-      "configurationVersion" : 2,
+      "configurationVersion" : 3,
       "createdTime" : 0,
       "debugMode" : false,
       "externalId" : null,
@@ -88,6 +89,7 @@
       "type" : "org.thingsboard.rule.engine.rest.TbRestApiCallNode"
     }, {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 1255,
         "layoutY" : 215
       },
