@@ -77,7 +77,7 @@
       },
       "configurationVersion" : 3,
       "createdTime" : 0,
-      "debugMode" : true,
+      "debugMode" : false,
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
