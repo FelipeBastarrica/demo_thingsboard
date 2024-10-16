@@ -12,7 +12,7 @@
       "entityType" : "RULE_CHAIN",
       "id" : "f11887e0-8b61-11ef-abca-65f6fb556bf7"
     },
-    "name" : "Alarms",
+    "name" : "Critical Alarms",
     "root" : false,
     "type" : "CORE"
   },
