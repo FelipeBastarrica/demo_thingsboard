@@ -39,15 +39,18 @@
     "firstNodeIndex" : null,
     "nodes" : [ {
       "additionalInfo" : {
+        "description" : null,
         "layoutX" : 641,
         "layoutY" : 212
       },
       "configuration" : {
+        "tellFailureIfAbsent" : false,
+        "fetchTo" : "METADATA",
         "clientAttributeNames" : [ ],
         "sharedAttributeNames" : [ ],
         "serverAttributeNames" : [ "latitude", "longitude", "units" ],
         "latestTsKeyNames" : [ ],
-        "fetchTo" : "METADATA"
+        "getLatestValueWithTs" : false
       },
       "configurationVersion" : 1,
       "createdTime" : 0,
